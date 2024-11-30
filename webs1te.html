@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwimStrong.com</title>
+    <style>
+        /* Welcome Section Styling */
+        #welcomeSection {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(45deg, #1F1F1F, #4C6A92);
+            color: white;
+            animation: fadeInUp 1s ease-in-out;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Styling for the Welcome Title */
+        #welcomeTitle {
+            font-size: 48px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+            margin: 0;
+        }
+
+        /* Styling for the Intro Text */
+        #introText {
+            font-size: 22px;
+            margin-top: 15px;
+            font-style: italic;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+
+        /* Your other existing styles go here */
+    </style>
+</head>
+<body>
+    <!-- Welcome Section -->
+    <div id="welcomeSection">
+        <h1 id="welcomeTitle">Welcome to SwimStrong!</h1>
+        <p id="introText">Your ultimate resource for swimming tips, techniques, and community support.</p>
+    </div>
+
+    <!-- Other content of your website goes here -->
+
+</body>
+</html>
+
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwimStrong.com</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        /* Chat with Us Button */
+        #chatWithUsBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            animation: pulse 2s infinite;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        #chatWithUsBtn:hover {
+            transform: scale(1.15);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Modal */
+        .modal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+        }
+
+        .modal-content {
+            background-color: #1F1F1F;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Chat Area */
+        #chatArea {
+            display: flex;
+            flex-direction: column;
+            height: 600px;
+            background: linear-gradient(to top, #232526, #414345);
+        }
+
+        #chatHeader {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        #closeModalBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        #closeModalBtn:hover {
+            color: #ff4d4d;
+        }
+
+        #groupChatCircle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #fff;
+            overflow: hidden;
+            cursor: pointer;
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            border: 2px solid #6a11cb;
+        }
+
+        #groupChatCircle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #chatTitle {
+            margin: 0;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #editTitleBtn {
+            font-size: 16px;
+            margin-left: 10px;
+            background: linear-gradient(45deg, #ff758c, #ff5858);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        #editTitleBtn:hover {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #ff4d4d, #e64a19);
+        }
+
+        /* Chat Messages */
+        #messages {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            display: inline-block;
+            max-width: 70%;
+            word-wrap: break-word;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 16px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out;
+            position: relative;
+        }
+
+        .message .sender {
+            font-size: 12px;
+            color: #ccc;
+            position: absolute;
+            bottom: -18px;
+            left: 10px;
+            text-align: left;
+            font-style: italic;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: linear-gradient(to left, #56ccf2, #2f80ed);
+            color: white;
+        }
+
+        .message.other {
+            align-self: flex-start;
+            background: linear-gradient(to right, #ff758c, #ff5858);
+            color: white;
+        }
+
+        /* Message Input Area */
+        #messageInputArea {
+            display: flex;
+            padding: 10px 20px;
+            border-top: 2px solid #3a3a3a;
+            background-color: #1F1F1F;
+        }
+
+        #messageInput {
+            flex: 1;
+            padding: 10px;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            background-color: #e1e1e1;
+        }
+
+        #sendMessageBtn {
+            padding: 10px 20px;
+            margin-left: 10px;
+            background: linear-gradient(to right, #56ccf2, #2f80ed);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Chat Button -->
+    <button id="chatWithUsBtn">Chat with Us</button>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div id="chatArea">
+                <!-- Chat Header -->
+                <div id="chatHeader">
+                    <div id="groupChatCircle" onclick="changeGroupPic()">
+                        <img id="groupChatImage" src="default-group.png" alt="Group Chat">
+                    </div>
+                    <h1 id="chatTitle">Group Chat</h1>
+                    <button id="editTitleBtn" onclick="editChatTitle()">Edit</button>
+                    <span id="closeModalBtn" onclick="closeModal()">X</span>
+                </div>
+
+                <!-- Chat Messages -->
+                <div id="messages"></div>
+
+                <!-- Message Input Area -->
+                <div id="messageInputArea">
+                    <input type="text" id="messageInput" placeholder="Type a message...">
+                    <button id="sendMessageBtn" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load messages and username from localStorage
+        const messages = JSON.parse(localStorage.getItem('messages')) || [];
+        const username = localStorage.getItem('username') || prompt('Enter your name:') || 'Anonymous';
+        const groupChatTitle = localStorage.getItem('groupChatTitle') || "Group Chat";
+        const savedImageSrc = localStorage.getItem('groupChatImage') || 'default-group.png';
+        document.getElementById('chatTitle').textContent = groupChatTitle;
+        document.getElementById('groupChatImage').src = savedImageSrc;
+
+        localStorage.setItem('username', username);
+
+        // Open the chat modal
+        document.getElementById('chatWithUsBtn').onclick = function () {
+            document.getElementById('chatModal').style.display = 'flex';
+            loadMessages();
+        };
+
+        // Close the chat modal
+        function closeModal() {
+            document.getElementById('chatModal').style.display = 'none';
+        }
+
+        // Load chat messages from localStorage
+        function loadMessages() {
+            const messageContainer = document.getElementById('messages');
+            messageContainer.innerHTML = '';
+            messages.forEach(addMessage);
+        }
+
+        // Add a new message to the chat
+        function addMessage({ text, sender }) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender === username ? 'user' : 'other'}`;
+            messageDiv.textContent = text;
+
+            const senderDiv = document.createElement('div');
+            senderDiv.className = 'sender';
+            senderDiv.textContent = sender;
+
+            messageDiv.appendChild(senderDiv);
+            document.getElementById('messages').appendChild(messageDiv);
+        }
+
+        // Send a message
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const text = input.value.trim();
+            if (text) {
+                const userMessage = { text, sender: username };
+                messages.push(userMessage);
+                localStorage.setItem('messages', JSON.stringify(messages));
+                addMessage(userMessage);
+                input.value = '';
+            }
+        }
+
+        // Edit the chat title
+        function editChatTitle() {
+            const newTitle = prompt("Enter a new group chat title:", groupChatTitle) || groupChatTitle;
+            document.getElementById('chatTitle').textContent = newTitle;
+            localStorage.setItem('groupChatTitle', newTitle);
+        }
+
+        // Change the group chat picture
+        function changeGroupPic() {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = 'image/*';
+            fileInput.onchange = (e) => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onload = () => {
+                    const imageSrc = reader.result;
+                    document.getElementById('groupChatImage').src = imageSrc;
+                    localStorage.setItem('groupChatImage', imageSrc);
+                };
+                reader.readAsDataURL(file);
+            };
+            fileInput.click();
+        }
+
+        window.onload = loadMessages;
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UF-8">
+    <meta name="viewport"
+content="width=device-width, initial-
+scale1.0">
+   <title>blue background</title>
+
+   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><h1>hello my name is Jago and I was 11 when 
+    I made made this website, i was doing it for fun but also because we were going to do HTML coding in year 
+    nine. i also made a little donating tab wich goes to a payment page so PLEASE support me, yes yes i know it 
+    says matthew but that is my dad so no worries.
+   </I></h1>
+   
+   <style>
+      body {
+        background-color: #333;
+        background-image: radial- 
+        gradient(circle, white 1px, 
+        transparent 1px);
+              background-size: 20px 
+              20px;
+            }
+
+
+            
+        
+              
+            
+        </style>
+</head>
+<body>
+<br><br><br><br><br><br><br><br><br><br><br><h1>First To start your journy in swimming you<br>
+    will need some goggles scroll down a bit to see<br>
+    some amazing suggested goggles.
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #333;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+            color: #bdbdbd;
+        }
+        
+
+        a {
+            color: #80d8ff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #40c4ff;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 90%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(45deg, #00695c, #1e88e5);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #e0f7fa;
+        }
+
+
+        .goggles-section {
+            background-color: #1b1b1b;
+            padding: 40px 20px;
+            margin: 40px 0;
+            border-top: 2px solid #00695c;
+            border-bottom: 2px solid #00695c;
+        }
+
+        .goggles-section h3 {
+            font-size: 2rem;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .goggles-section p {
+            font-size: 1rem;
+            color: #bdbdbd;
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #121212;
+            color: #bdbdbd;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 2px solid #00695c;
+        }
+    
+        
+    
+
+    </style>
+    
+    
+ </body>
+ </html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goggles</title>
+    
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #333;
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+
+    
+    .goggles-section {
+        padding: 50px;
+        background-color: #1F1F1F;
+        color: white;
+        text-align: left;
+        margin: 20px;
+        border-radius: 10px;
+    }
+    
+    .goggles-section h2 {
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .goggles-section p {
+        font-size: 18px;
+        line-height: 1;
+        color: #ccc;
+        font-style: italic;
+    }
+    
+    .goggles_1 {
+        max-width: 60%;
+        height: auto;
+        margin-top: 20px;
+        margin-left: 0;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Modal */
+    
+    </style>
+    
+    
+    </style>
+    </head>
+    <body>
+    <!-- Chat Button -->
+    
+    <!-- Funky Trunks Section -->
+    <div class="funky-trunks-section">
+    
+    <p>These are some really nice trunks from Funky Trunks, offering both comfort and style in the pool. Great for all types of swimming!</p>
+    <img src="him.png" alt="Funky Trunks Swim Shorts">
+    </div>
+      
+     
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+    
+        
+        .goggles-section {
+            padding: 50px;
+            background-color: #1F1F1F;
+            color: white;
+            text-align: left;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        
+        .goggles-section h2 {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .goggles-section p {
+            font-size: 18px;
+            line-height: 1;
+            color: #ccc;
+            font-style: italic;
+        }
+        
+        .goggles_1 {
+            max-width: 60%;
+            height: auto;
+            margin-top: 20px;
+            margin-left: 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Modal */
+        
+        </style>
+        
+        
+       
+        </head>
+        <body>
+        <!-- Chat Button -->
+        
+        <!-- Funky Trunks Section -->
+        <div class="goggles-setion">
+        
+        <p>These are some really nice trunks from Funky Trunks, offering both comfort and style in the pool. Great for all types of swimming!</p>
+        <img src="black.png" alt="Funky Trunks Swim Shorts">
+        </div>
+</body>
+    </html>
+
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+    
+        
+        .gogs-section {
+            padding: 50px;
+            background-color: #1F1F1F;
+            color: white;
+            text-align: left;
+            margin: 20px;
+            border-radius: 10px;
+        }
+        
+        .gogs-section h2 {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gogs-section p {
+            font-size: 18px;
+            line-height: 1;
+            color: #ccc;
+            font-style: italic;
+        }
+        
+        .goggles_1 {
+            max-width: 60%;
+            height: auto;
+            margin-top: 20px;
+            margin-left: 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Modal */
+        
+        </style>
+        
+        
+        
+        </head>
+        <body>
+        <!-- Chat Button -->
+        
+        <!-- Funky Trunks Section -->
+        <div class="gogs-section">
+        
+        <p>These are some really nice trunks from Funky Trunks, offering both comfort and style in the pool. Great for all types of swimming!</p>
+        <img src="goggles.png" alt="Funky Trunks Swim Shorts">
+        </div>
+
+
+<br><br><br><br><br><br><br><br><br><h1>next you will need some swimming shorts
+  but first click the button below to donate some money
+
+  <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Donate via Monzo</title>
+        <style>
+            #donateTab {
+                background-color: #f9f9f9;
+                padding: 20px;
+                width: 300px;
+                margin: 100px auto;
+                text-align: center;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+            h2 {
+                font-family: Arial, sans-serif;
+                color: #333;
+            }
+            button {
+                background-color: #14233c;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #1e3355;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <div id="donateTab">
+        <h2>Support Us with a Donation!</h2>
+        <a href="https://monzo.me/matthewlewis85?h=bV9CEH" target="_blank">
+            <button>Donate via Monzo</button>
+        </a>
+    </div>
+    <style>
+
+     body {
+            font-family: 'Arial', sans-serif;
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        /* Chat with Us Button */
+        
+
+        
+
+        
+
+        /* Funky Trunks Section */
+        .funky-trunks-section {
+            padding: 50px;
+            background-color: #1F1F1F;
+            color: white;
+            text-align: left;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .funky-trunks-section h2 {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .funky-trunks-section p {
+            font-size: 18px;
+            line-height: 1;
+            color: #ccc;
+            font-style: italic;
+        }
+
+        .funky-trunks-section img {
+            max-width: 60%;
+            height: auto;
+            margin-top: 20px;
+            margin-left: 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Modal */
+      
+    </style>
+
+        
+    </style>
+</head>
+<body>
+    <!-- Chat Button -->
+    
+    <!-- Funky Trunks Section -->
+    <div class="funky-trunks-section">
+        <h2>Funky Trunks Swim Shorts</h2>
+        <p>These are some really nice trunks from Funky Trunks, offering both comfort and style in the pool. Great for all types of swimming!</p>
+        <img src="Trunkss.png" alt="Funky Trunks Swim Shorts">
+    </div>
+
+   
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+       body {
+            font-family: 'Arial', sans-serif;
+            background-color: #333;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        /* Chat with Us Button */
+        
+
+        
+
+        
+
+        /* Funky Trunks Section */
+        .funky-trunks-section {
+            padding: 50px;
+            background-color: #1F1F1F;
+            color: white;
+            text-align: left;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .funky-trunks-section h2 {
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .funky-trunks-section p {
+            font-size: 18px;
+            line-height: 1;
+            color: #ccc;
+            font-style: italic;
+        }
+
+        .funky-trunks-section img {
+            max-width: 60%;
+            height: auto;
+            margin-top: 20px;
+            margin-left: 0;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Modal */
+      
+         
+
+        
+    </style>
+</head>
+<body>
+    <!-- Chat Button -->
+    
+    <!-- Funky Trunks Section -->
+    
+</head>
+<body>
+<!-- Chat Button -->
+
+<!-- Funky Trunks Section -->
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+   </body>
+</html>
+<style>
+
+
+/* Chat with Us Button */
+
+
+
+
+
+
+/* Funky Trunks Section */
+.funky-trunks-section {
+    padding: 50px;
+    background-color: #1F1F1F;
+    color: white;
+    text-align: left;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.funky-trunks-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.funky-trunks-section p {
+    font-size: 18px;
+    line-height: 1;
+    color: #ccc;
+    font-style: italic;
+}
+
+.funky-trunks-section img {
+    max-width: 60%;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal */
+
+</style>
+
+
+</style>
+</head>
+<body>
+<!-- Chat Button -->
+
+<!-- Funky Trunks Section -->
+<div class="funky-trunks-section">
+
+<p>These are some really nice trunks from Funky Trunks, offering both comfort and style in the pool. Great for all types of swimming!</p>
+<img src="shorts.png" alt="Funky Trunks Swim Shorts">
+</div>
+
+
+   
+
+
+    
+       
+        
+    
+
+
+
+    
+
+    
+
+
+
+    
+  </a>
+    
+    </body>
+    </html>
+
+
+
+
+
+
+   
+</body>
